@@ -1,0 +1,114 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+body{
+
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.gameboard{
+  display: grid;
+  width: 300px;
+  height: 300px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  place-items:center;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.cell{
+  width: 100%;
+  height: 100%;
+  transition: background 0.5s ease-in-out;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  caret-color:transparent;
+  position: relative;
+}
+.cell[data-col="1"] {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.cell[data-row="1"] {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.cell::after{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color:lightgrey;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  content: "";
+}
+.cell:hover::after{
+opacity: 0.40;
+}
+
+.aiControl{
+  display: flex;
+  align-items: center;
+}
+
+.aiControl span{
+  padding-right: 10px;
+}
+
+.switch{
+position: relative;
+display: inline-block;
+  width: 60px;
+  height: 30px;
+  caret-color: transparent;
+}
+
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider{
+  background-color: #2196F3;
+}
+input:focus + .slider{
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before{
+  transform: translateX(calc(60px - 8px - 22px));
+}

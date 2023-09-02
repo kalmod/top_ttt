@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Let's play TIC-TAC-TOE</h1>
+        <p class="currentPlayer">The current Player: <span></span></p>
+        <div class="aiControl">
+          <span>Enable Opponent A.I?</span>
+          <label class="switch" for="ai">
+            <input type="checkbox" name="ai" id="ai"> 
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="buttonContainer">
+          <button class="restart">RESET GAME</button>
+          <button class="startGame">START GAME</button>
+        </div> 
+      </div>
+      <br>
+      <div class="gameboard">
+      </div>
+    </main>
+    <dialog class='gameOver'>
+      <div>Game status goes here</div>
+      <button>Restart Game</button>
+    </dialog>
+
+  </body>
+</html>
